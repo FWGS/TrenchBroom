@@ -80,7 +80,7 @@ namespace TrenchBroom {
                     reloadLayout();
             }
         public:
-            CellView(wxWindow* parent, GLContextManager& contextManager, wxGLAttributes attribs, wxScrollBar* scrollBar = NULL) :
+            CellView(wxWindow* parent, GLContextManager& contextManager, const GLAttribs& attribs, wxScrollBar* scrollBar = NULL) :
             RenderView(parent, contextManager, attribs),
             m_layoutInitialized(false),
             m_valid(false),

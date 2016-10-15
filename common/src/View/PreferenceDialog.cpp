@@ -172,7 +172,7 @@ namespace TrenchBroom {
 
             wxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
 #if !defined __APPLE__
-			buttonSizer->Add(resetButton, wxSizerFlags().CenterVertical());
+			buttonSizer->Add(resetButton, wxALIGN_CENTER_VERTICAL);
 			buttonSizer->AddStretchSpacer();
             buttonSizer->Add(CreateButtonSizer(wxOK | wxAPPLY | wxCANCEL));
 #else
@@ -184,9 +184,9 @@ namespace TrenchBroom {
             stdButtonSizer->SetCancelButton(closeButton);
             stdButtonSizer->Realize();
             
-            buttonSizer->Add(resetButton, wxSizerFlags().CenterVertical());
+            buttonSizer->Add(resetButton, wxALIGN_CENTER_VERTICAL);
 			buttonSizer->AddStretchSpacer();
-            buttonSizer->Add(stdButtonSizer, wxSizerFlags().CenterVertical());
+            buttonSizer->Add(stdButtonSizer, wxALIGN_CENTER_VERTICAL);
 #endif
 
             sizer->Add(wrapDialogButtonSizer(buttonSizer, this), wxSizerFlags().Expand());

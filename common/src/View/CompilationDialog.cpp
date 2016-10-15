@@ -101,7 +101,7 @@ namespace TrenchBroom {
             currentRunLabelSizer->AddStretchSpacer();
             
             wxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
-            buttonSizer->Add(launchButton, wxSizerFlags().CenterVertical());
+            buttonSizer->Add(launchButton, wxALIGN_CENTER_VERTICAL);
             buttonSizer->Add(currentRunLabelSizer, wxSizerFlags().Expand().Proportion(1).Border(wxLEFT | wxRIGHT, LayoutConstants::WideHMargin));
             buttonSizer->Add(stdButtonSizer);
             

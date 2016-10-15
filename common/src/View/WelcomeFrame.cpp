@@ -52,7 +52,7 @@ namespace TrenchBroom {
             m_recentDocumentListBox->SetMaxSize(wxSize(350, wxDefaultCoord));
             
             wxBoxSizer* innerSizer = new wxBoxSizer(wxHORIZONTAL);
-            innerSizer->Add(appPanel, wxSizerFlags().CenterVertical());
+            innerSizer->Add(appPanel, wxALIGN_CENTER_VERTICAL);
             innerSizer->Add(new BorderLine(container, BorderLine::Direction_Vertical), wxSizerFlags().Expand());
             innerSizer->Add(m_recentDocumentListBox, wxSizerFlags().Expand().Proportion(1));
             innerSizer->SetItemMinSize(m_recentDocumentListBox, wxSize(350, 400));
@@ -121,9 +121,9 @@ namespace TrenchBroom {
             buttonSizer->Add(m_openOtherDocumentButton, 1, wxEXPAND);
 
             wxBoxSizer* outerSizer = new wxBoxSizer(wxVERTICAL);
-            outerSizer->Add(infoPanel, wxSizerFlags().CenterHorizontal().Border(wxLEFT | wxRIGHT, 50));
+            outerSizer->Add(infoPanel, wxALIGN_CENTER_HORIZONTAL | wxLEFT | wxRIGHT, 0);
             outerSizer->AddSpacer(20);
-            outerSizer->Add(buttonSizer, wxSizerFlags().CenterHorizontal().Border(wxLEFT | wxRIGHT, 50));
+            outerSizer->Add(buttonSizer, wxALIGN_CENTER_VERTICAL | wxLEFT | wxRIGHT, 50);
             outerSizer->AddSpacer(20);
             
             appPanel->SetSizer(outerSizer);

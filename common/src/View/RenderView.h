@@ -40,11 +40,11 @@ namespace TrenchBroom {
         class RenderView : public wxGLCanvas {
         private:
             GLContext::Ptr m_glContext;
-            wxGLAttributes m_attribs;
+            GLAttribs m_attribs;
             bool m_initialized;
             Color m_focusColor;
         protected:
-            RenderView(wxWindow* parent, GLContextManager& contextManager, wxGLAttributes attribs);
+            RenderView(wxWindow* parent, GLContextManager& contextManager, const GLAttribs& attribs);
         public:
             void OnPaint(wxPaintEvent& event);
             void OnSize(wxSizeEvent& event);

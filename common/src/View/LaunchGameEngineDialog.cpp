@@ -89,7 +89,7 @@ namespace TrenchBroom {
             midLeftSizer->AddSpacer(20);
             midLeftSizer->Add(message, wxSizerFlags().Expand());
             midLeftSizer->AddSpacer(10);
-            midLeftSizer->Add(openPreferencesButton, wxSizerFlags().CenterHorizontal());
+            midLeftSizer->Add(openPreferencesButton, wxALIGN_CENTER_HORIZONTAL);
             midLeftSizer->AddStretchSpacer();
             midLeftSizer->Add(parameterLabel);
             midLeftSizer->AddSpacer(LayoutConstants::NarrowVMargin);

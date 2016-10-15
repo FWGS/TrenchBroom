@@ -119,7 +119,7 @@ namespace TrenchBroom {
             moveTaskDownButton->Bind(wxEVT_UPDATE_UI, &CompilationProfileEditor::OnUpdateMoveTaskDownButtonUI, this);
             
             wxSizer* buttonSizer = new wxBoxSizer(wxHORIZONTAL);
-            const wxSizerFlags buttonFlags = wxSizerFlags().CenterVertical().Border(wxTOP | wxBOTTOM, LayoutConstants::NarrowVMargin);
+            const wxSizerFlags buttonFlags = wxALIGN_CENTER_VERTICAL | wxTOP | wxBOTTOM;
             buttonSizer->Add(addTaskButton, buttonFlags);
             buttonSizer->Add(removeTaskButton, buttonFlags);
             buttonSizer->AddSpacer(LayoutConstants::WideHMargin);

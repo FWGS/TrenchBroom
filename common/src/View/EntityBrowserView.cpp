@@ -56,7 +56,7 @@ namespace TrenchBroom {
                                              Assets::EntityDefinitionManager& entityDefinitionManager,
                                              Assets::EntityModelManager& entityModelManager,
                                              Logger& logger) :
-        CellView(parent, contextManager, GLAttribs::attribs(), scrollBar),
+        CellView(parent, contextManager, buildAttribs(), scrollBar),
         m_entityDefinitionManager(entityDefinitionManager),
         m_entityModelManager(entityModelManager),
         m_logger(logger),

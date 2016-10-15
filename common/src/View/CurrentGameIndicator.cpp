@@ -48,9 +48,9 @@ namespace TrenchBroom {
             
             wxSizer* sizer = new wxBoxSizer(wxHORIZONTAL);
             sizer->AddSpacer(LayoutConstants::WideHMargin);
-            sizer->Add(gameIconImg, wxSizerFlags().CenterVertical().Border(wxTOP | wxBOTTOM, LayoutConstants::WideVMargin));
+            sizer->Add(gameIconImg, 0, wxALIGN_CENTER_VERTICAL | wxTOP | wxBOTTOM, LayoutConstants::WideVMargin);
             sizer->AddSpacer(LayoutConstants::NarrowHMargin);
-            sizer->Add(gameNameText, wxSizerFlags().CenterVertical().Border(wxTOP | wxBOTTOM, LayoutConstants::WideVMargin));
+            sizer->Add(gameNameText, 0, wxALIGN_CENTER_VERTICAL | wxTOP | wxBOTTOM, LayoutConstants::WideVMargin);
             SetSizer(sizer);
         }
     }
