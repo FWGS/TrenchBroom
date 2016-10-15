@@ -28,7 +28,7 @@ namespace TrenchBroom {
         m_begin(begin),
         m_end(end),
         m_current(m_begin) {
-            assert(std::less_equal<const char *>()(m_begin, m_end));
+            //assert(std::less_equal<const char *>()(m_begin, m_end));
         }
 
         size_t CharArrayReader::size() const {
@@ -36,22 +36,22 @@ namespace TrenchBroom {
         }
 
         void CharArrayReader::seekFromBegin(const size_t offset) {
-            assert(offset < size());
+            //assert(offset < size());
             m_current = m_begin + offset;
         }
 
         void CharArrayReader::seekFromEnd(const size_t offset) {
-            assert(offset < size());
+            //assert(offset < size());
             m_current = m_end - offset;
         }
 
         void CharArrayReader::seekForward(const size_t offset) {
-            assert(m_current + offset < m_end);
+            //assert(m_current + offset < m_end);
             m_current += offset;
         }
 
         void CharArrayReader::read(char* val, const size_t size) {
-            assert(canRead(size));
+            //assert(canRead(size));
             std::memcpy(val, m_current, size);
             m_current += size;
         }

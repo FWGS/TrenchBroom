@@ -227,7 +227,7 @@ namespace TrenchBroom {
             if (matches.empty())
                 return EntityAttributeSnapshot(name);
             
-            assert(matches.size() == 1);
+            //assert(matches.size() == 1);
             return EntityAttributeSnapshot(name, matches.front()->value());
         }
 
@@ -278,7 +278,7 @@ namespace TrenchBroom {
             if (matches.empty())
                 return m_attributes.end();
             
-            assert(matches.size() == 1);
+            //assert(matches.size() == 1);
             return matches.front();
         }
         
@@ -287,7 +287,7 @@ namespace TrenchBroom {
             if (matches.empty())
                 return m_attributes.end();
             
-            assert(matches.size() == 1);
+            //assert(matches.size() == 1);
             return matches.front();
         }
 
