@@ -1,4 +1,3 @@
-INCLUDE(cmake/GenerateHelp.cmake)
 
 SET(APP_DIR "${CMAKE_SOURCE_DIR}/app")
 SET(APP_SOURCE_DIR "${APP_DIR}/src")
@@ -8,8 +7,6 @@ FILE(GLOB_RECURSE APP_SOURCE
     "${APP_SOURCE_DIR}/*.h"
     "${APP_SOURCE_DIR}/*.cpp"
 )
-
-SET(APP_SOURCE ${APP_SOURCE} ${DOC_HELP_TARGET_FILES})
 
 # OS X app bundle configuration, must happen before the executable is added
 IF(APPLE)
@@ -67,7 +64,7 @@ IF(APPLE)
     SET(APP_SOURCE ${APP_SOURCE} ${MACOSX_SHADER_FILES})
 
     # Configure help files
-    SET_SOURCE_FILES_PROPERTIES(${DOC_HELP_TARGET_FILES} PROPERTIES MACOSX_PACKAGE_LOCATION Resources/help)
+    # SET_SOURCE_FILES_PROPERTIES(${DOC_HELP_TARGET_FILES} PROPERTIES MACOSX_PACKAGE_LOCATION Resources/help)
 ENDIF()
 
 # Set up resource compilation for Windows
@@ -102,7 +99,7 @@ ADD_CUSTOM_TARGET(GenerateVersion
     ${CMAKE_COMMAND} -P "${CMAKE_CURRENT_BINARY_DIR}/GenerateVersion.cmake")
 ADD_DEPENDENCIES(TrenchBroom GenerateVersion)
 
-ADD_DEPENDENCIES(TrenchBroom GenerateHelp)
+# ADD_DEPENDENCIES(TrenchBroom GenerateHelp)
 
 IF(APPLE)
     # Configure variables that are substituted into the plist
@@ -165,15 +162,15 @@ IF(WIN32 OR ${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 	)
 
     # Copy help files to resource directory
-	ADD_CUSTOM_COMMAND(TARGET TrenchBroom POST_BUILD
-		COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:TrenchBroom>/Resources/help/"
-	)
+#	ADD_CUSTOM_COMMAND(TARGET TrenchBroom POST_BUILD
+#		COMMAND ${CMAKE_COMMAND} -E make_directory "$<TARGET_FILE_DIR:TrenchBroom>/Resources/help/"
+#	)
 
-    FOREACH(HELP_FILE ${DOC_HELP_TARGET_FILES})
-        ADD_CUSTOM_COMMAND(TARGET TrenchBroom POST_BUILD
-            COMMAND ${CMAKE_COMMAND} -E copy ${HELP_FILE} "$<TARGET_FILE_DIR:TrenchBroom>/Resources/help/"
-        )
-    ENDFOREACH(HELP_FILE)
+#    FOREACH(HELP_FILE ${DOC_HELP_TARGET_FILES})
+#        ADD_CUSTOM_COMMAND(TARGET TrenchBroom POST_BUILD
+#            COMMAND ${CMAKE_COMMAND} -E copy ${HELP_FILE} "$<TARGET_FILE_DIR:TrenchBroom>/Resources/help/"
+#        )
+#    ENDFOREACH(HELP_FILE)
 ENDIF()
 
 # Common CPack configuration
@@ -214,9 +211,9 @@ IF(WIN32)
     INSTALL(FILES
         ${WIN_LIBS}
         DESTINATION . COMPONENT TrenchBroom)
-    INSTALL(FILES
-        ${DOC_HELP_TARGET_FILES}
-        DESTINATION Resources/help COMPONENT TrenchBroom)
+#    INSTALL(FILES
+#        ${DOC_HELP_TARGET_FILES}
+#        DESTINATION Resources/help COMPONENT TrenchBroom)
     INSTALL(DIRECTORY
         "${APP_DIR}/resources/graphics/images"
         "${APP_DIR}/resources/games"
