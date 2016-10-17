@@ -1,6 +1,6 @@
 version: 2.0.0-appveyor-{build}
 install:
-- ps: Invoke-WebRequest 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.2/wxWidgets-3.0.2-headers.7z' -OutFile 'headers.7z'
+- ps: Invoke-WebRequest 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.2/wxWidgets-3.0.2_headers.7z' -OutFile 'headers.7z'
 - ps: Invoke-WebRequest 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.2/wxMSW-3.0.2_vc100_Dev.7z' -OutFile 'dev.7z'
 - ps: Invoke-WebRequest 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.2/wxMSW-3.0.2_vc100_ReleaseDLL.7z' -OutFile 'dll.7z'
 - ps: Invoke-WebRequest 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.2/wxMSW-3.0.2_vc100_ReleasePDB.7z' -OutFile 'pdb.7z'
