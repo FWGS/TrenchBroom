@@ -22,4 +22,4 @@ build_script:
 
     msbuild TrenchBroom.vcxproj /p:Configuration=Debug /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 after_build:
- - curl --upload-file TrenchBroom.exe https://transfer.sh/TrenchBroom.exe
+ - curl --upload-file C:\projects\trenchbroom\cmakebuild\Debug\TrenchBroom.exe https://transfer.sh/TrenchBroom.exe
