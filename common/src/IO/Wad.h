@@ -39,8 +39,8 @@ namespace TrenchBroom {
 
         namespace WadType
         {
-            static const int32_t WTWad3 = (('3'<<24)+('D'<<16)+('A'<<8)+'W');
-            static const int32_t WTWad2 = (('2'<<24)+('D'<<16)+('A'<<8)+'W');
+            static const int WTWad3 = (('3'<<24)+('D'<<16)+('A'<<8)+'W');
+            static const int WTWad2 = (('2'<<24)+('D'<<16)+('A'<<8)+'W');
         }
         
         class WadEntry {
@@ -79,10 +79,10 @@ namespace TrenchBroom {
         private:
             MappedFile::Ptr m_file;
             WadEntryList m_entries;
-            int32_t m_type;
+            int m_type;
         public:
             Wad(const Path& path);
-            int32_t type() const;
+            int type() const;
             
             const WadEntryList& allEntries() const;
             const WadEntryList entriesWithType(const char type) const;

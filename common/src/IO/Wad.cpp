@@ -88,7 +88,7 @@ namespace TrenchBroom {
             loadEntries();
         }
 
-        int32_t Wad::type() const {
+        int Wad::type() const {
             return m_type;
         }
 
@@ -108,8 +108,8 @@ namespace TrenchBroom {
         }
 
         void Wad::loadEntries() {
-            if (WadLayout::NumEntriesAddress + sizeof(int32_t) >= m_file->size() ||
-                WadLayout::DirOffsetAddress + sizeof(int32_t) >= m_file->size())
+            if (WadLayout::NumEntriesAddress + sizeof(int) >= m_file->size() ||
+                WadLayout::DirOffsetAddress + sizeof(int) >= m_file->size())
                 throw AssetException("Invalid wad layout");
             
             const char* cursor = m_file->begin();
